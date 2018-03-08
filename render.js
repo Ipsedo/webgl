@@ -1,18 +1,18 @@
 let mContext;
 let modelVBO;
 
-let objFileName = "res/snow_baleine_obj.obj";
+let objFileName = "res/monkey.obj";
 
-let mvpMatrix =
-    [-1.0,0.0,0.0,0.0,
+let mvMatrix = [-1,0,-0,0,0,1,-0,0,0,0,-1,0,0,0,-11,1];
+    /*[-1.0,0.0,0.0,0.0,
     0.0,1.33333,0.0,0.0,
     0.0,0.0,1.04082,1.0,
-    0.0,0.0,30.2245,31.0];
-let mvMatrix =
-    [-1.0,0.0,-0.0,0.0,
+    0.0,0.0,30.2245,31.0];*/
+let mvpMatrix = [-1,0,0,0,0,1.33333,0,0,0,0,1.04082,1,0,0,9.40816,11];
+    /*[-1.0,0.0,-0.0,0.0,
     0.0,1.0,-0.0,0.0,
     0.0,0.0,-1.0,0.0,
-    0.0,0.0,-31.0,1.0];
+    0.0,0.0,-31.0,1.0];*/
 
 /*var viewM = [-1,0,-0,0,0,1,-0,0,0,-0,-1,0,-0,-0,-1,1];
 var projM = [1,0,0,0,0,1.33333,0,0,0,0,-1.04082,-1,0,0,-2.04082,0];
@@ -64,6 +64,6 @@ function initScene() {
 
 function draw() {
     mContext.clear(mContext.COLOR_BUFFER_BIT | mContext.DEPTH_BUFFER_BIT);
-    modelVBO.draw(mvpMatrix, mvMatrix, [0.0, 0.0, 0.0]);
+    modelVBO.draw(mvpMatrix, mvMatrix, [0.0, 1.0, 11.0]);
     requestAnimationFrame(draw);
 }

@@ -46,7 +46,7 @@ let createShader = function (gl, str, type) {
 let ModelVBO = function (gl, objFileName, color) {
     this.isReady = false;
     this.context = gl;
-    this.color = color.slice(0);
+    this.color = new Float32Array(color);
     this.init();
     this.bind();
     this.openObj(objFileName);
@@ -162,6 +162,9 @@ ModelVBO.prototype.draw = function (mvpMatrix, mvMatrix, lightPosInEyeSpace) {
 
     this.context.bindBuffer(this.context.ARRAY_BUFFER, null);
 
+    mvMatrix = new Float32Array(mvMatrix);
+    mvpMatrix = new Float32Array(mvpMatrix);
+    lightPosInEyeSpace = new Float32Array(lightPosInEyeSpace);
     this.context.uniformMatrix4fv(this.mMVPMatrixHandle, false, mvpMatrix);
     this.context.uniformMatrix4fv(this.mMVMatrixHandle, false, mvMatrix);
     this.context.uniform3fv(this.mLightPosHandle, lightPosInEyeSpace);
