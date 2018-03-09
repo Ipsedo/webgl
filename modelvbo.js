@@ -22,7 +22,7 @@ let fs = "precision mediump float;\n" +
     "    float distance = length(tmp);\n" +
     "    vec3 lightVector = normalize(tmp);\n" +
     "    float diffuse = max(dot(v_Normal, lightVector), 0.0) * u_light_coef;\n" +
-    "    diffuse = diffuse * (1.0 / (1.0 + (u_distance_coef * distance * distance)));\n" +
+    "    diffuse = diffuse * (1.0 / (1.0 + u_distance_coef * distance * distance));\n" +
     "    gl_FragColor = u_Color * diffuse;\n" +
     "}";
 
