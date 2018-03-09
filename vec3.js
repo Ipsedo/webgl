@@ -1,4 +1,4 @@
-var Vec3 = function(x, y, z) {
+let Vec3 = function(x, y, z) {
     this.x = x;
     this.y = y;
     this.z = z;
@@ -9,7 +9,7 @@ Vec3.prototype.length = function () {
 };
 
 Vec3.prototype.norm = function () {
-    var l = this.length();
+    let l = this.length();
     return this.mult(1. / l);
 };
 
