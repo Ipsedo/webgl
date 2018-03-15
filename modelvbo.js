@@ -176,6 +176,4 @@ ModelVBO.prototype.draw = function (mvpMatrix, mvMatrix, lightPosInEyeSpace) {
 
     this.context.disableVertexAttribArray(this.mPositionHandle);
     this.context.disableVertexAttribArray(this.mNormalHandle);
-
-    //console.log(this.context.getError() + " 8");
 };
