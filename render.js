@@ -72,6 +72,8 @@ function initScene() {
 
 function draw() {
     mContext.clear(mContext.COLOR_BUFFER_BIT | mContext.DEPTH_BUFFER_BIT);
-    modelVBO.draw(mvpMatrix, mvMatrix, [0.0, 1.0, 11.0]);
+    modelVBO.draw(mvpMatrix, mvMatrix, [0.0, 10.0, 11.0]);
     requestAnimationFrame(draw);
 }
+
+window.addEventListener("load", webGLStart);
