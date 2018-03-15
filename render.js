@@ -53,7 +53,7 @@ function initGL() {
         /*mContext.viewport(canvas.offsetLeft, canvas.offsetTop, canvas.offsetWidth, canvas.offsetHeight);
         console.log("yo");*/
     } catch (e) {
-
+        alert(e);
     }
     if (!mContext) {
         alert("Impossible de lancer weblgl !");
